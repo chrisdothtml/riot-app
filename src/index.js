@@ -1,5 +1,5 @@
 /* global riot */
 
-import './tags/test.tag'
+import './tags/Notes/index.tag'
 
-riot.mount('test')
+riot.mount('Notes')
