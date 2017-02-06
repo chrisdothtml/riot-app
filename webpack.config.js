@@ -1,4 +1,6 @@
 const path = require('path')
+const webpack = require('webpack')
+const NAME = 'riot-app'
 
 function rel (dest) {
   return path.join(__dirname, dest)
@@ -28,5 +30,9 @@ module.exports = {
         'css-loader'
       ]
     }
-  ]}
+  ]},
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.BannerPlugin(`${NAME} - 02/06/2017`)
+  ]
 }
