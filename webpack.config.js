@@ -31,9 +31,5 @@ module.exports = {
         'sass-loader'
       ]
     }
-  ]},
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.BannerPlugin(`${NAME} - 02/06/2017`)
-  ]
+  ]}
 }
