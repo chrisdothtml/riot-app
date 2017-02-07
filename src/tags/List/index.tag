@@ -18,7 +18,7 @@
 
   <script>
     import data from './data.json'
-    import './Actions.tag'
+    import './Actions/index.tag'
     import './index.scss'
 
     this.notes = data
