@@ -19,6 +19,6 @@
     import './tags/Editor/index.tag'
     import './tags/Folder-Picker/index.tag'
     import './tags/List/index.tag'
-    import './index.css'
+    import './index.scss'
   </script>
 </Notes>

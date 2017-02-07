@@ -19,7 +19,7 @@
   <script>
     import data from './data.json'
     import './Actions.tag'
-    import './index.css'
+    import './index.scss'
 
     this.notes = data
     this.clickNote = (event) => {

@@ -9,6 +9,6 @@
   </div>
 
   <script>
-    import './index.css'
+    import './index.scss'
   </script>
 </Folder-Picker>

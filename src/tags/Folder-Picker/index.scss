@@ -1,0 +1,24 @@
+.Folder-Picker {
+  background-color: #95a5a6;
+  width: 100%;
+  color: white;
+
+  .Picker-buttons {
+    list-style-type: none;
+    font-size: 0;
+
+    > li {
+      display: inline-block;
+      font-size: 16px;
+
+      &.active {
+        background-color: #fff;
+        color: #95a5a6;
+      }
+
+      > button {
+        padding: 15px 20px;
+      }
+    }
+  }
+}
