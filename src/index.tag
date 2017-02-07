@@ -3,7 +3,7 @@
 
     <Folder-Picker></Folder-Picker>
 
-    <div class="container">
+    <div class="container content">
 
       <div class="col-3">
         <List></List>

@@ -1,23 +1,19 @@
+@import '../../scss/_colors.scss';
+
 .Folder-Picker {
-  background-color: #95a5a6;
+  background-color: $river;
   width: 100%;
   color: white;
 
-  .Picker-buttons {
-    list-style-type: none;
-    font-size: 0;
+  .Picker-btns {
+    display: flex;
 
-    > li {
-      display: inline-block;
-      font-size: 16px;
+    > .btn {
+      padding: 15px 20px;
 
       &.active {
-        background-color: #fff;
-        color: #95a5a6;
-      }
-
-      > button {
-        padding: 15px 20px;
+        background-color: white;
+        color: $river;
       }
     }
   }

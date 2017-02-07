@@ -1,6 +1,10 @@
 <Actions>
   <div class="Actions">
-    <button>Add Note</button>
-    <button>Select Notes</button>
+    <button class="btn">Add Note</button>
+    <button class="btn">Select Notes</button>
   </div>
+
+  <script>
+    import './index.scss'
+  </script>
 </Actions>

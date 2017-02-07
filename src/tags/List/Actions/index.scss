@@ -1,0 +1,13 @@
+@import '../../../scss/_colors.scss';
+
+.Actions {
+  display: flex;
+  justify-content: space-between;
+
+  .btn {
+    background-color: $river;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+  }
+}
