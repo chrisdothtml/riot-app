@@ -1,0 +1,45 @@
+*,
+:before,
+:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf0f1;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+button,
+[role="button"] {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-9 {
+  width: 75%;
+}

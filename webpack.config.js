@@ -19,7 +19,7 @@ module.exports = {
       enforce: 'pre'
     },
     {
-      test: /\.js$/,
+      test: /\.(js|tag)$/,
       loader: 'babel-loader',
       exclude: /(node_modules|bower_components)/
     },
