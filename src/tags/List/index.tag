@@ -1,7 +1,7 @@
 <List>
   <div class="List">
 
-    <Actions></Actions>
+    <Actions/>
 
     <ul class="List-notes">
       <li

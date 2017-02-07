@@ -1,16 +1,16 @@
 <Notes>
   <div class="Notes">
 
-    <Folder-Picker></Folder-Picker>
+    <Folder-Picker/>
 
     <div class="container content">
 
       <div class="col-3">
-        <List></List>
+        <List/>
       </div>
 
       <div class="col-9">
-        <Editor></Editor>
+        <Editor/>
       </div>
     </div>
   </div>
