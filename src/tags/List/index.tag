@@ -5,10 +5,10 @@
 
     <ul class="List-notes">
       <li
-        each="{ notes }"
+        each="{ store.notes }"
         role="button"
-        class="{ selected: this.selected }"
-        data-id="{ this.id }"
+        class="{ selected: id === store.selectedNote }"
+        data-id="{ id }"
         onclick="{ clickNote }"
       >
         <span>{ title }</span>
@@ -21,11 +21,17 @@
     import './Actions/index.tag'
     import './index.scss'
 
-    this.notes = data
-    this.clickNote = (event) => {
+    this.mixin('state')
+
+    /**
+     * Selects the clicked note
+     */
+    clickNote (event) {
       const item = event.item
 
-      item.selected = !item.selected
+      this.publish('selectNote', {
+        id: item.id
+      })
     }
   </script>
 </List>
