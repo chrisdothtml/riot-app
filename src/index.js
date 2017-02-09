@@ -1,5 +1,5 @@
 import riot from 'riot'
 import './state-mixin'
-import './index.tag'
+import './tags/Notes/index.tag'
 
 riot.mount('*')

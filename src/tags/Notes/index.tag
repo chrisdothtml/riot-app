@@ -16,9 +16,9 @@
   </div>
 
   <script>
-    import './tags/Editor/index.tag'
-    import './tags/Folder-Picker/index.tag'
-    import './tags/List/index.tag'
+    import '../Editor/index.tag'
+    import '../Folder-Picker/index.tag'
+    import '../List/index.tag'
     import './index.scss'
   </script>
 </Notes>

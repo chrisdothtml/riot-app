@@ -1,4 +1,4 @@
-<Actions>
+<List-Actions>
   <div class="Actions">
     <button class="btn" onclick="{ addNote }">Add Note</button>
     <button class="btn">Select Notes</button>
@@ -16,4 +16,4 @@
       this.publish('addNote')
     }
   </script>
-</Actions>
+</List-Actions>

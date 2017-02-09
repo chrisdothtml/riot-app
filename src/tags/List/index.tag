@@ -1,7 +1,7 @@
 <List>
   <div class="List">
 
-    <Actions/>
+    <List-Actions/>
 
     <ul class="List-notes">
       <li
@@ -18,7 +18,7 @@
 
   <script>
     import data from './data.json'
-    import './Actions/index.tag'
+    import '../List-Actions/index.tag'
     import './index.scss'
 
     this.mixin('state')
