@@ -18,7 +18,7 @@ export default function (state = defaultState, action) {
         notes: reducers.notes(state.notes, action)
       }
     case 'select-note':
-    case 'update-folder':
+    case 'select-folder':
       return {
         ...state,
         view: reducers.view(state.view, action)

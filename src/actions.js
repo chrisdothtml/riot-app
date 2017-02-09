@@ -12,9 +12,9 @@ export function selectNote (id = 0) {
   }
 }
 
-export function updateFolder (folder = '') {
+export function selectFolder (folder = '') {
   return {
-    type: 'update-folder',
+    type: 'select-folder',
     folder
   }
 }
