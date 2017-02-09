@@ -19,21 +19,23 @@ function populateNotes (notes, action) {
   return notes.concat(action.notes)
 }
 
-export default function (notes, action) {
-  let result = notes
-  let handle
+export default function (state, action) {
+  let result = state
+  let reducer
 
   switch (action.type) {
     case 'create-note':
-      handle = createNote
+      reducer = createNote
       break
     case 'populate-notes':
-      handle = populateNotes
+      reducer = populateNotes
       break
   }
 
-  if (handle) {
-    result = handle(notes, action)
+  if (reducer) {
+    const notes = reducer(state.notes, action)
+
+    result = { ...state, notes }
   }
 
   return result

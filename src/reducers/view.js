@@ -12,21 +12,23 @@ function selectNote (view, action) {
   return { ...view, note: action.id }
 }
 
-export default function (view, action) {
-  let result = view
-  let handle
+export default function (state, action) {
+  let result = state
+  let reducer
 
   switch (action.type) {
     case 'select-folder':
-      handle = selectFolder
+      reducer = selectFolder
       break
     case 'select-note':
-      handle = selectNote
+      reducer = selectNote
       break
   }
 
-  if (handle) {
-    result = handle(view, action)
+  if (reducer) {
+    let view = reducer(state.view, action)
+
+    result = { ...state, view }
   }
 
   return result
