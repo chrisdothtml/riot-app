@@ -1,23 +1,30 @@
 /**
  * @returns {array} notes
  */
-// TODO: this needs to also update state.view.note
-function createNote (notes) {
+function createNote (state) {
+  let { notes, view } = state
+  const id = notes.length + 1
   const note = {
     userId: 1,
-    id: notes.length + 1,
+    id,
     title: 'New note title',
     body: ''
   }
 
-  return notes.concat([note])
+  notes = [note].concat(notes)
+  view = { ...view, note: id }
+  return { ...state, notes, view }
 }
 
 /**
  * @returns {array} notes
  */
-function populateNotes (notes, action) {
-  return notes.concat(action.notes)
+function populateNotes (state, action) {
+  let { notes, view } = state
+
+  notes = notes.concat(action.notes)
+  view = { ...view, note: notes[0].id }
+  return { ...state, notes, view }
 }
 
 export default function (state, action) {
@@ -34,9 +41,7 @@ export default function (state, action) {
   }
 
   if (reducer) {
-    const notes = reducer(state.notes, action)
-
-    result = { ...state, notes }
+    result = reducer(state, action)
   }
 
   return result
