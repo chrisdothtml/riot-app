@@ -1,6 +1,7 @@
 /**
  * @returns {array} notes
  */
+// TODO: this needs to also update state.view.note
 function createNote (notes) {
   const note = {
     userId: 1,
