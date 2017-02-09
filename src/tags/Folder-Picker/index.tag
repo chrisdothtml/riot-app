@@ -23,9 +23,9 @@
     this.subscribe(selectedFolder)
 
     selectFolder (event) {
-      this.dispatch(updateFolder({
-        folder: event.item.folder
-      }))
+      this.dispatch(
+        updateFolder(event.item.folder)
+      )
     }
   </script>
 </Folder-Picker>

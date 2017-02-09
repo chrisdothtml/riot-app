@@ -5,9 +5,9 @@
 
     <ul class="List-notes">
       <li
-        each="{ store.notes }"
+        each="{ notes }"
         role="button"
-        class="{ selected: id === store.selectedNote }"
+        class="{ selected: id === selectedNote }"
         data-id="{ id }"
         onclick="{ clickNote }"
       >
@@ -17,17 +17,18 @@
   </div>
 
   <script>
-    import data from './data.json'
+    import { selectNote } from '../../actions'
+    import { notes, selectedNote } from './selectors.js'
     import '../List-Actions/index.tag'
     import './index.scss'
 
-    /**
-     * Selects the clicked note
-     */
-    clickNote (event) {
-      const item = event.item
+    this.subscribe(notes)
+    this.subscribe(selectedNote)
 
-      //
+    clickNote (event) {
+      this.dispatch(
+        selectNote(event.item.id)
+      )
     }
   </script>
 </List>

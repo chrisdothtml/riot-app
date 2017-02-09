@@ -16,9 +16,17 @@
   </div>
 
   <script>
+    import { addNotes } from '../../actions'
+    import data from '../../data.json'
     import '../Editor/index.tag'
     import '../Folder-Picker/index.tag'
     import '../List/index.tag'
     import './index.scss'
+
+    this.on('mount', () => {
+      setTimeout(() => {
+        this.dispatch(addNotes(data))
+      }, 500)
+    })
   </script>
 </Notes>
