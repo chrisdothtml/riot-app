@@ -1,3 +1,9 @@
+export function createNote () {
+  return {
+    type: 'create-note'
+  }
+}
+
 export function populateNotes (notes = []) {
   return {
     type: 'populate-notes',

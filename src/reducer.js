@@ -12,13 +12,14 @@ const defaultState = {
 
 export default function (state = defaultState, action) {
   switch (action.type) {
+    case 'create-note':
     case 'populate-notes':
       return {
         ...state,
         notes: reducers.notes(state.notes, action)
       }
-    case 'select-note':
     case 'select-folder':
+    case 'select-note':
       return {
         ...state,
         view: reducers.view(state.view, action)

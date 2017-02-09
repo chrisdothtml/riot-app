@@ -1,10 +1,33 @@
+/**
+ * @returns {object} view
+ */
+function selectFolder (view, action) {
+  return { ...view, folder: action.folder }
+}
+
+/**
+ * @returns {object} view
+ */
+function selectNote (view, action) {
+  return { ...view, note: action.id }
+}
+
 export default function (view, action) {
+  let result = view
+  let handle
+
   switch (action.type) {
-    case 'select-note':
-      return { ...view, note: action.id }
     case 'select-folder':
-      return { ...view, folder: action.folder }
+      handle = selectFolder
+      break
+    case 'select-note':
+      handle = selectNote
+      break
   }
 
-  return view
+  if (handle) {
+    result = handle(view, action)
+  }
+
+  return result
 }
