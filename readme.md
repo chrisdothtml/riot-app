@@ -5,5 +5,10 @@
 ### Run build
 
 ```bash
-webpack
+# -w to watch module files
+webpack -w
 ```
+
+### View demo
+
+Open `app/index.html` in your browser
