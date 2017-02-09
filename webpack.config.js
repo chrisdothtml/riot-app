@@ -31,5 +31,6 @@ module.exports = {
         'sass-loader'
       ]
     }
-  ]}
+  ]},
+  externals: ['riot']
 }
