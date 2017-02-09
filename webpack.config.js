@@ -32,5 +32,8 @@ module.exports = {
       ]
     }
   ]},
-  externals: ['riot']
+  externals: {
+    reselect: 'Reselect',
+    riot: 'riot'
+  }
 }

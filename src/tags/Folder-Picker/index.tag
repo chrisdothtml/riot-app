@@ -3,8 +3,8 @@
     <div class="container">
       <div class="Picker-btns">
         <button
-          each="{ folder in store.folders }"
-          class="btn { active: store.selectedFolder === folder }"
+          each="{ folder in folders }"
+          class="btn { active: selectedFolder === folder }"
           onclick="{ selectFolder }"
         >
           { folder }
@@ -14,18 +14,18 @@
   </div>
 
   <script>
+    import { updateFolder } from '../../actions'
+    import config from '../../config.json'
+    import { selectedFolder } from './selectors.js'
     import './index.scss'
 
-    this.mixin('state')
-    this.folders = ['Active', 'Deleted']
+    this.folders = config.folders
+    this.subscribe(selectedFolder)
 
-    /**
-     * Selects a new folder
-     */
     selectFolder (event) {
-      this.publish('selectFolder', {
+      this.dispatch(updateFolder({
         folder: event.item.folder
-      })
+      }))
     }
   </script>
 </Folder-Picker>

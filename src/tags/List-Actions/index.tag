@@ -7,13 +7,11 @@
   <script>
     import './index.scss'
 
-    this.mixin('state')
-
     /**
      * Adds a new note
      */
     addNote () {
-      this.publish('addNote')
+      // this.publish('addNote')
     }
   </script>
 </List-Actions>

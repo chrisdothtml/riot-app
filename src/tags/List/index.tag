@@ -21,17 +21,13 @@
     import '../List-Actions/index.tag'
     import './index.scss'
 
-    this.mixin('state')
-
     /**
      * Selects the clicked note
      */
     clickNote (event) {
       const item = event.item
 
-      this.publish('selectNote', {
-        id: item.id
-      })
+      //
     }
   </script>
 </List>
