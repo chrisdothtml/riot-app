@@ -12,7 +12,7 @@ const defaultState = {
 
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case 'add-notes':
+    case 'populate-notes':
       return {
         ...state,
         notes: reducers.notes(state.notes, action)

@@ -1,6 +1,6 @@
 export default function (notes, action) {
   switch (action.type) {
-    case 'add-notes':
+    case 'populate-notes':
       return notes.concat(action.notes)
   }
 

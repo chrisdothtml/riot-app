@@ -1,6 +1,6 @@
-export function addNotes (notes = []) {
+export function populateNotes (notes = []) {
   return {
-    type: 'add-notes',
+    type: 'populate-notes',
     notes
   }
 }

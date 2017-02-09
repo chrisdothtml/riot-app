@@ -16,7 +16,7 @@
   </div>
 
   <script>
-    import { addNotes } from '../../actions'
+    import { populateNotes } from '../../actions.js'
     import data from '../../data.json'
     import '../Editor/index.tag'
     import '../Folder-Picker/index.tag'
@@ -25,7 +25,7 @@
 
     this.on('mount', () => {
       setTimeout(() => {
-        this.dispatch(addNotes(data))
+        this.dispatch(populateNotes(data))
       }, 500)
     })
   </script>
