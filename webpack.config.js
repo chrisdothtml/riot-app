@@ -1,6 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
-const NAME = 'riot-app'
 
 function rel (dest) {
   return path.join(__dirname, dest)

@@ -1,5 +1,5 @@
-import config from '../config.json'
-import importAll from '../common/import-all.js'
+import config from './config.json'
+import importAll from './common/import-all.js'
 
 const reducers = importAll(require.context('./reducers'))
 const defaultState = {
