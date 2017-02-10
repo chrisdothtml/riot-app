@@ -10,6 +10,7 @@
           placeholder="Note title"
           value="{ note.title }"
           onkeyup="{ updateTitle }"
+          disabled="{ selectedFolder === 'Deleted' }"
         />
       </div>
 
@@ -19,18 +20,19 @@
           class="note-body"
           placeholder="Note body"
           onkeyup="{ updateBody }"
+          disabled="{ selectedFolder === 'Deleted' }"
         >{ note.body }</textarea>
       </div>
     </form>
   </div>
 
   <script>
-    import { selectedNote } from './selectors.js'
+    import { stateView } from './selectors.js'
     import { getNote } from '../../common/utils.js'
     import './index.scss'
 
     this.note = {}
-    this.subscribe(selectedNote)
+    this.subscribe(stateView)
 
     // update note when selected is updated
     this.on('update', () => {

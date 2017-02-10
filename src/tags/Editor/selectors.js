@@ -1,6 +1,9 @@
 import { createSelector } from 'reselect'
 
-export const selectedNote = createSelector(
-  state => state.view.note,
-  selectedNote => ({ selectedNote })
+export const stateView = createSelector(
+  state => state.view,
+  ({ folder, note }) => ({
+    selectedFolder: folder,
+    selectedNote: note
+  })
 )

@@ -29,6 +29,16 @@ button,
   cursor: pointer;
 }
 
+input,
+textarea {
+  border: 1px solid #7f8c8d;
+}
+
+input[disabled],
+textarea[disabled] {
+  background-color: #e5e7e8;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
