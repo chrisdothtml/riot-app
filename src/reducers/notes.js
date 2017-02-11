@@ -1,5 +1,5 @@
 /**
- * @returns {array} notes
+ * @returns {objext} state
  */
 function createNote (state) {
   let { notes, view } = state
@@ -17,7 +17,7 @@ function createNote (state) {
 }
 
 /**
- * @returns {array} notes
+ * @returns {objext} state
  */
 function populateNotes (state, action) {
   let { notes, view } = state
@@ -27,6 +27,9 @@ function populateNotes (state, action) {
   return { ...state, notes, view }
 }
 
+/**
+ * @returns {object} state
+ */
 export default function (state, action) {
   let result = state
   let reducer

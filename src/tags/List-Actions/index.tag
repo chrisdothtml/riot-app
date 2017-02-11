@@ -9,7 +9,7 @@
       <span>Add Note</span>
     </button>
 
-    <button class="btn btn-select">
+    <button class="btn btn-right">
       <span>Select Notes</span>
     </button>
   </div>
