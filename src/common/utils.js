@@ -1,5 +1,5 @@
 /**
- * Filters the notes based on the currently selected folder
+ * Filters notes based on currently selected folder
  *
  * @returns {array}
  */
@@ -15,13 +15,13 @@ export function filterNotes (state) {
 }
 
 /**
- * Finds a note in the provided state by the provided id
+ * Finds note with provided id
  *
- * @returns {object}
+ * @returns {object|undefined}
  */
-export function getNote (state, id) {
-  const notes = state.notes
-  let result = {}
+export function findNote (state, id) {
+  const { notes } = state
+  let result
 
   for (let i = 0; i < notes.length; i++) {
     let note = notes[i]

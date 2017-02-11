@@ -5,7 +5,7 @@ import { filterNotes } from '../common/utils.js'
  *
  * @returns {object} state
  */
-export function _viewFolder (state, folder) {
+export function _selectFolder (state, folder) {
   let { view } = state
 
   view = { ...view, folder }
@@ -19,7 +19,7 @@ export function _viewFolder (state, folder) {
  *
  * @returns {object} state
  */
-export function _viewNote (state, id) {
+export function _selectNote (state, id) {
   let { notes, view } = state
 
   // find first note id

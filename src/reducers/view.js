@@ -1,15 +1,13 @@
-import { _viewFolder, _viewNote } from './_utils.js'
+import { _selectFolder, _selectNote } from './_utils.js'
 
 /**
  * @returns {object} state
  */
 function selectFolder (state, action) {
-  let notes
-
   // update folder
-  state = _viewFolder(state, action.folder)
+  state = _selectFolder(state, action.folder)
   // select first note
-  state = _viewNote(state, 'first')
+  state = _selectNote(state, 'first')
 
   return state
 }
@@ -18,7 +16,7 @@ function selectFolder (state, action) {
  * @returns {object} state
  */
 function selectNote (state, action) {
-  return _viewNote(state, action.id)
+  return _selectNote(state, action.id)
 }
 
 /**

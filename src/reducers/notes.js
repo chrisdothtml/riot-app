@@ -1,4 +1,4 @@
-import { _viewNote } from './_utils.js'
+import { _selectFolder, _selectNote } from './_utils.js'
 
 /**
  * @returns {objext} state
@@ -19,7 +19,7 @@ function createNote (state) {
   state = { ...state, notes }
 
   // select new note
-  state = _viewNote(state, id)
+  state = _selectNote(state, id)
 
   return state
 }
@@ -35,7 +35,7 @@ function populateNotes (state, action) {
   state = { ...state, notes }
 
   // select first note
-  state = _viewNote(state, 'first')
+  state = _selectNote(state, 'first')
 
   return state
 }

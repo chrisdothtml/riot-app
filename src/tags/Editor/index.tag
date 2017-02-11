@@ -31,7 +31,7 @@
 
   <script>
     import { stateView } from './selectors.js'
-    import { getNote } from '../../common/utils.js'
+    import { findNote } from '../../common/utils.js'
     import '../Editor-Action/index.tag'
     import './index.scss'
 
@@ -40,7 +40,7 @@
 
     // update note when selected is updated
     this.on('update', () => {
-      this.note = getNote(
+      this.note = findNote(
         this.store.getState(),
         this.selectedNote
       )
