@@ -1,6 +1,6 @@
 <Editor>
   <div class="Editor">
-    <form action="#">
+    <form action="#" onsubmit="{ suppress }">
 
       <div class="Editor-top">
 
@@ -45,6 +45,10 @@
         this.selectedNote
       )
     })
+
+    suppress (event) {
+      event.preventDefault()
+    }
 
     updateTitle () {
       console.log('update note title')
