@@ -39,6 +39,13 @@ textarea[disabled] {
   background-color: #e5e7e8;
 }
 
+.btn {
+  background-color: #3498db;
+  padding: 10px;
+  font-size: 14px;
+  color: white;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
