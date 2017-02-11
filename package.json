@@ -1,5 +1,9 @@
 {
   "private": true,
+  "scripts": {
+    "build": "webpack -p",
+    "dev": "webpack-dev-server"
+  },
   "dependencies": {
     "lodash": "^4.17.4",
     "redux": "^3.6.0",

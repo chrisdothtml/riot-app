@@ -5,10 +5,12 @@
 ### Run build
 
 ```bash
-# -w to watch module files
-webpack -w
+# minified production build
+yarn build
 ```
 
-### View demo
+### Start dev server
 
-Open `app/index.html` in your browser
+```bash
+yarn dev
+```
