@@ -1,31 +1,24 @@
-import { filterNotes } from '../common/utils.js'
+import { _viewFolder, _viewNote } from './_utils.js'
 
 /**
  * @returns {object} state
  */
 function selectFolder (state, action) {
-  let { view } = state
   let notes
 
-  // update selected folder
-  view = { ...view, folder: action.folder }
-  state = { ...state, view }
+  // update folder
+  state = _viewFolder(state, action.folder)
+  // select first note
+  state = _viewNote(state, 'first')
 
-  // update selected note
-  notes = filterNotes(state)
-  view = { ...view, note: notes[0].id }
-
-  return { ...state, view }
+  return state
 }
 
 /**
  * @returns {object} state
  */
 function selectNote (state, action) {
-  let { view } = state
-
-  view = { ...view, note: action.id }
-  return { ...state, view }
+  return _viewNote(state, action.id)
 }
 
 /**

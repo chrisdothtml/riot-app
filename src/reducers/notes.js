@@ -1,8 +1,10 @@
+import { _viewNote } from './_utils.js'
+
 /**
  * @returns {objext} state
  */
 function createNote (state) {
-  let { notes, view } = state
+  let { notes } = state
   const id = notes.length + 1
   const note = {
     userId: 1,
@@ -12,9 +14,14 @@ function createNote (state) {
     deleted: false
   }
 
+  // add note
   notes = [note].concat(notes)
-  view = { ...view, note: id }
-  return { ...state, notes, view }
+  state = { ...state, notes }
+
+  // select new note
+  state = _viewNote(state, id)
+
+  return state
 }
 
 /**
@@ -23,9 +30,14 @@ function createNote (state) {
 function populateNotes (state, action) {
   let { notes, view } = state
 
+  // add notes
   notes = notes.concat(action.notes)
-  view = { ...view, note: notes[0].id }
-  return { ...state, notes, view }
+  state = { ...state, notes }
+
+  // select first note
+  state = _viewNote(state, 'first')
+
+  return state
 }
 
 /**
