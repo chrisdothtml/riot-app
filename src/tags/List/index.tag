@@ -5,7 +5,7 @@
 
     <ul class="List-notes">
       <li
-        each="{ notes }"
+        each="{ showingNotes }"
         role="button"
         class="{ selected: id === selectedNote }"
         data-id="{ id }"
@@ -18,12 +18,18 @@
 
   <script>
     import { selectNote } from '../../actions.js'
-    import { notes, selectedNote } from './selectors.js'
+    import { notes, stateView } from './selectors.js'
+    import { filterNotes } from '../../common/utils.js'
     import '../List-Actions/index.tag'
     import './index.scss'
 
     this.subscribe(notes)
-    this.subscribe(selectedNote)
+    this.subscribe(stateView)
+
+    // filter notes on update
+    this.on('update', () => {
+      this.showingNotes = filterNotes(this.store.getState())
+    })
 
     clickNote (event) {
       this.dispatch(

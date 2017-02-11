@@ -5,7 +5,10 @@ export const notes = createSelector(
   notes => ({ notes })
 )
 
-export const selectedNote = createSelector(
-  state => state.view.note,
-  note => ({ selectedNote: note })
+export const stateView = createSelector(
+  state => state.view,
+  ({ folder, note }) => ({
+    selectedFolder: folder,
+    selectedNote: note
+  })
 )

@@ -1,17 +1,36 @@
+import { filterNotes } from '../common/utils.js'
+
 /**
- * @returns {object} view
+ * @returns {object} state
  */
-function selectFolder (view, action) {
-  return { ...view, folder: action.folder }
+function selectFolder (state, action) {
+  let { view } = state
+  let notes
+
+  // update selected folder
+  view = { ...view, folder: action.folder }
+  state = { ...state, view }
+
+  // update selected note
+  notes = filterNotes(state)
+  view = { ...view, note: notes[0].id }
+
+  return { ...state, view }
 }
 
 /**
- * @returns {object} view
+ * @returns {object} state
  */
-function selectNote (view, action) {
-  return { ...view, note: action.id }
+function selectNote (state, action) {
+  let { view } = state
+
+  view = { ...view, note: action.id }
+  return { ...state, view }
 }
 
+/**
+ * @returns {object} state
+ */
 export default function (state, action) {
   let result = state
   let reducer
@@ -26,9 +45,7 @@ export default function (state, action) {
   }
 
   if (reducer) {
-    let view = reducer(state.view, action)
-
-    result = { ...state, view }
+    result = reducer(state, action)
   }
 
   return result

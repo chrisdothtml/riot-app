@@ -1,4 +1,20 @@
 /**
+ * Filters the notes based on the currently selected folder
+ *
+ * @returns {array}
+ */
+export function filterNotes (state) {
+  const { notes, view } = state
+
+  return notes.filter(note => {
+    const viewingDeleted = view.folder === 'Deleted'
+    const shouldShow = note.deleted === viewingDeleted
+
+    return shouldShow
+  })
+}
+
+/**
  * Finds a note in the provided state by the provided id
  *
  * @returns {object}
