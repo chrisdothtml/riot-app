@@ -14,7 +14,10 @@
           disabled="{ selectedFolder === 'Deleted' }"
         />
 
-        <Editor-Action selected_folder="{ selectedFolder }" />
+        <Editor-Action
+          selected_folder="{ selectedFolder }"
+          selected_note="{ selectedNote }"
+        />
       </div>
 
       <div class="Editor-bottom">

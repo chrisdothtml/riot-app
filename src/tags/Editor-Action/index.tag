@@ -14,4 +14,20 @@
   >
     <span>Restore</span>
   </button>
+
+  <script>
+    import { deleteNote, restoreNote } from '../../actions.js'
+
+    clickDelete () {
+      this.dispatch(
+        deleteNote(opts.selected_note)
+      )
+    }
+
+    clickRestore () {
+      this.dispatch(
+        restoreNote(opts.selected_note)
+      )
+    }
+  </script>
 </Editor-Action>

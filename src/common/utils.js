@@ -34,3 +34,20 @@ export function findNote (state, id) {
 
   return result
 }
+
+/**
+ * Gets note index with provided id
+ *
+ * @returns {number} index or -1
+ */
+export function getNoteIndex (state, id) {
+  const { notes } = state
+
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].id === id) {
+      return i
+    }
+  }
+
+  return -1
+}

@@ -1,4 +1,5 @@
 import { _selectFolder, _selectNote } from './_utils.js'
+import { getNoteIndex } from '../common/utils.js'
 
 /**
  * @returns {objext} state
@@ -18,8 +19,25 @@ function createNote (state) {
   notes = [note].concat(notes)
   state = { ...state, notes }
 
-  // select new note
   state = _selectNote(state, id)
+  return state
+}
+
+/**
+ * @returns {objext} state
+ */
+function deleteNote (state, action) {
+  const { notes } = state
+  const noteIndex = getNoteIndex(state, action.id)
+
+  if (noteIndex > -1) {
+    // mark note as deleted
+    notes[noteIndex].deleted = true
+    state = { ...state, notes }
+
+    // select first note
+    state = _selectNote(state, 'first')
+  }
 
   return state
 }
@@ -34,8 +52,27 @@ function populateNotes (state, action) {
   notes = notes.concat(action.notes)
   state = { ...state, notes }
 
-  // select first note
   state = _selectNote(state, 'first')
+  return state
+}
+
+/**
+ * @returns {objext} state
+ */
+function restoreNote (state, action) {
+  const { notes } = state
+  const noteIndex = getNoteIndex(state, action.id)
+
+  if (noteIndex > -1) {
+    let { id } = notes[noteIndex]
+
+    // mark note as not deleted
+    notes[noteIndex].deleted = false
+    state = { ...state, notes }
+
+    state = _selectFolder(state, 'Active')
+    state = _selectNote(state, id)
+  }
 
   return state
 }
@@ -51,8 +88,14 @@ export default function (state, action) {
     case 'create-note':
       reducer = createNote
       break
+    case 'delete-note':
+      reducer = deleteNote
+      break
     case 'populate-notes':
       reducer = populateNotes
+      break
+    case 'restore-note':
+      reducer = restoreNote
       break
   }
 

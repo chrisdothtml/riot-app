@@ -16,7 +16,9 @@ export default function (state = defaultState, action) {
 
   switch (action.type) {
     case 'create-note':
+    case 'delete-note':
     case 'populate-notes':
+    case 'restore-note':
       reducer = 'notes'
       break
     case 'select-folder':

@@ -4,9 +4,7 @@ import { _selectFolder, _selectNote } from './_utils.js'
  * @returns {object} state
  */
 function selectFolder (state, action) {
-  // update folder
   state = _selectFolder(state, action.folder)
-  // select first note
   state = _selectNote(state, 'first')
 
   return state
