@@ -4,5 +4,7 @@ import riot from 'riot'
 import reduxMixin from 'riot-redux-mixin'
 import './tags/Notes/index.tag'
 
-riot.mixin(reduxMixin(createStore(reducer)))
+const reduxTools = window.__REDUX_DEVTOOLS_EXTENSION__
+
+riot.mixin(reduxMixin(createStore(reducer, reduxTools && reduxTools())))
 riot.mount('Notes')
