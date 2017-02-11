@@ -15,13 +15,11 @@ module.exports = {
       test: /\.tag$/,
       loader: 'riotjs-loader',
       enforce: 'pre'
-    },
-    {
+    }, {
       test: /\.(js|tag)$/,
       loader: 'babel-loader',
-      exclude: /(node_modules|bower_components)/
-    },
-    {
+      exclude: /(node_modules)/
+    }, {
       test: /\.s?css$/,
       use: [
         'style-loader',
@@ -33,5 +31,11 @@ module.exports = {
   externals: {
     reselect: 'Reselect',
     riot: 'riot'
+  },
+  devServer: {
+    contentBase: [
+      rel('app'),
+      rel('node_modules')
+    ]
   }
 }
