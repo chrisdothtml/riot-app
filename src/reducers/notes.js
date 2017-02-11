@@ -8,7 +8,8 @@ function createNote (state) {
     userId: 1,
     id,
     title: 'New note title',
-    body: ''
+    body: '',
+    deleted: false
   }
 
   notes = [note].concat(notes)
