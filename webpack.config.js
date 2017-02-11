@@ -29,6 +29,7 @@ module.exports = {
     }
   ]},
   externals: {
+    redux: 'Redux',
     reselect: 'Reselect',
     riot: 'riot'
   },
