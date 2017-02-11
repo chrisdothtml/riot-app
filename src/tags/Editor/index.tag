@@ -3,6 +3,7 @@
     <form action="#">
 
       <div class="Editor-top">
+
         <input
           type="text"
           name="note-title"
@@ -12,6 +13,8 @@
           onkeyup="{ updateTitle }"
           disabled="{ selectedFolder === 'Deleted' }"
         />
+
+        <Editor-Action selected_folder="{ selectedFolder }" />
       </div>
 
       <div class="Editor-bottom">
@@ -29,6 +32,7 @@
   <script>
     import { stateView } from './selectors.js'
     import { getNote } from '../../common/utils.js'
+    import '../Editor-Action/index.tag'
     import './index.scss'
 
     this.note = {}

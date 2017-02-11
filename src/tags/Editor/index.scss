@@ -4,6 +4,7 @@
   min-height: 300px;
 
   &-top {
+    display: flex;
     margin: 0 20px;
     padding: 20px 10px;
     border-bottom: 1px solid #000;
@@ -12,7 +13,13 @@
       display: block;
       width: 100%;
       height: 30px;
+      margin-right: 15px;
       padding: 0 10px;
+    }
+
+    .btn {
+      line-height: 1;
+      font-size: 10px;
     }
   }
 
