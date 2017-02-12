@@ -1,4 +1,4 @@
-import reducer from './reducer'
+import reducer from './state/reducer.js'
 import { createStore } from 'redux'
 import riot from 'riot'
 import reduxMixin from 'riot-redux-mixin'

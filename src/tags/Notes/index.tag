@@ -16,7 +16,7 @@
   </div>
 
   <script>
-    import { populateNotes } from '../../actions.js'
+    import { populateNotes } from '../../state/actions.js'
     import data from '../../data.json'
     import '../Editor/index.tag'
     import '../Folder-Picker/index.tag'

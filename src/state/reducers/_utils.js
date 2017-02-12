@@ -1,4 +1,4 @@
-import { filterNotes } from '../common/utils.js'
+import { filterNotes } from '../../common/utils.js'
 
 /**
  * Updates state.view.folder to the provided folder

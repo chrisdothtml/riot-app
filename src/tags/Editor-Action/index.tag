@@ -16,7 +16,7 @@
   </button>
 
   <script>
-    import { deleteNote, restoreNote } from '../../actions.js'
+    import { deleteNote, restoreNote } from '../../state/actions.js'
 
     clickDelete () {
       this.dispatch(

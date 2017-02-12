@@ -17,7 +17,7 @@
   </div>
 
   <script>
-    import { selectNote } from '../../actions.js'
+    import { selectNote } from '../../state/actions.js'
     import { notes, stateView } from './selectors.js'
     import { filterNotes } from '../../common/utils.js'
     import '../List-Actions/index.tag'

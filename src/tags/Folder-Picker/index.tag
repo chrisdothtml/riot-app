@@ -14,7 +14,7 @@
   </div>
 
   <script>
-    import { selectFolder } from '../../actions.js'
+    import { selectFolder } from '../../state/actions.js'
     import config from '../../config.json'
     import { selectedFolder } from './selectors.js'
     import './index.scss'

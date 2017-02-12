@@ -1,5 +1,5 @@
 import { _selectFolder, _selectNote } from './_utils.js'
-import { getNoteIndex } from '../common/utils.js'
+import { getNoteIndex } from '../../common/utils.js'
 
 /**
  * @returns {objext} state
@@ -46,7 +46,7 @@ function deleteNote (state, action) {
  * @returns {objext} state
  */
 function populateNotes (state, action) {
-  let { notes, view } = state
+  let { notes } = state
 
   // add notes
   notes = notes.concat(action.notes)

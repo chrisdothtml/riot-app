@@ -15,7 +15,7 @@
   </div>
 
   <script>
-    import { createNote } from '../../actions.js'
+    import { createNote } from '../../state/actions.js'
     import { selectedFolder } from './selectors.js'
     import './index.scss'
 
