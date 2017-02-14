@@ -1,32 +1,24 @@
 <Editor-Action>
-  <button
-    class="btn"
-    onclick="{ clickDelete }"
-    show="{ opts.view_folder === 'Active' }"
-  >
-    <span>Delete</span>
-  </button>
-
-  <button
-    class="btn"
-    onclick="{ clickRestore }"
-    show="{ opts.view_folder === 'Deleted' }"
-  >
-    <span>Restore</span>
+  <button class="btn" onclick="{ click }">
+    <span>{ label }</span>
   </button>
 
   <script>
     import { deleteNote, restoreNote } from '../../state/actions.js'
 
-    clickDelete () {
-      this.dispatch(
-        deleteNote(opts.view_note)
-      )
-    }
+    this.on('update', () => {
+      if (opts.view_folder === 'Active') {
+        this.label = 'Delete'
+        this.action = deleteNote
+      } else {
+        this.label = 'Restore'
+        this.action = restoreNote
+      }
+    })
 
-    clickRestore () {
+    click () {
       this.dispatch(
-        restoreNote(opts.view_note)
+        this.action(opts.view_note)
       )
     }
   </script>
