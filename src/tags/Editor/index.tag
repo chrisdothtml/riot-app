@@ -1,12 +1,11 @@
 <Editor>
   <div class="Editor">
-    <form action="#" onsubmit="{ suppress }">
+    <form action="#" onsubmit="{ suppressForm }">
 
       <div class="Editor-top">
 
         <input
           type="text"
-          name="note-title"
           class="note-title"
           placeholder="Note title"
           value="{ note.title }"
@@ -22,7 +21,6 @@
 
       <div class="Editor-bottom">
         <textarea
-          name="note-body"
           class="note-body"
           placeholder="Note body"
           onkeyup="{ updateBody }"
@@ -49,7 +47,7 @@
       )
     })
 
-    suppress (event) {
+    suppressForm (event) {
       event.preventDefault()
     }
 

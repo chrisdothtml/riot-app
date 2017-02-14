@@ -4,8 +4,8 @@
       <div class="Picker-btns">
         <button
           each="{ folder in folders }"
-          onclick="{ clickFolder }"
           class="btn { active: folder === view.folder }"
+          onclick="{ click }"
         >
           { folder }
         </button>
@@ -22,7 +22,7 @@
     this.folders = config.folders
     this.subscribe(view_folder)
 
-    clickFolder (event) {
+    click (event) {
       this.dispatch(
         selectFolder(event.item.folder)
       )

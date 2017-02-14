@@ -5,7 +5,7 @@
 
     <ul class="List-notes">
       <li
-        each="{ showingNotes }"
+        each="{ visibleNotes }"
         role="button"
         class="{ selected: id === view.note }"
         data-id="{ id }"
@@ -28,7 +28,7 @@
 
     // filter notes on update
     this.on('update', () => {
-      this.showingNotes = filterNotes(this.store.getState())
+      this.visibleNotes = filterNotes(this.store.getState())
     })
 
     clickNote (event) {
