@@ -4,8 +4,8 @@
       <div class="Picker-btns">
         <button
           each="{ folder in folders }"
-          class="btn { active: selectedFolder === folder }"
           onclick="{ clickFolder }"
+          class="btn { active: folder === view.folder }"
         >
           { folder }
         </button>
@@ -16,11 +16,11 @@
   <script>
     import { selectFolder } from '../../state/actions.js'
     import config from '../../config.json'
-    import { selectedFolder } from './selectors.js'
+    import { view_folder } from '../../state/selectors.js'
     import './index.scss'
 
     this.folders = config.folders
-    this.subscribe(selectedFolder)
+    this.subscribe(view_folder)
 
     clickFolder (event) {
       this.dispatch(

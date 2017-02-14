@@ -2,7 +2,7 @@
   <button
     class="btn"
     onclick="{ clickDelete }"
-    show="{ opts.selected_folder === 'Active' }"
+    show="{ opts.view_folder === 'Active' }"
   >
     <span>Delete</span>
   </button>
@@ -10,7 +10,7 @@
   <button
     class="btn"
     onclick="{ clickRestore }"
-    show="{ opts.selected_folder === 'Deleted' }"
+    show="{ opts.view_folder === 'Deleted' }"
   >
     <span>Restore</span>
   </button>
@@ -20,13 +20,13 @@
 
     clickDelete () {
       this.dispatch(
-        deleteNote(opts.selected_note)
+        deleteNote(opts.view_note)
       )
     }
 
     clickRestore () {
       this.dispatch(
-        restoreNote(opts.selected_note)
+        restoreNote(opts.view_note)
       )
     }
   </script>

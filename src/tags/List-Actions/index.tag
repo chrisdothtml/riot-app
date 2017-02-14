@@ -4,7 +4,7 @@
     <button
       class="btn"
       onclick="{ clickAdd }"
-      show="{ selectedFolder === 'Active' }"
+      show="{ view.folder === 'Active' }"
     >
       <span>Add Note</span>
     </button>
@@ -16,10 +16,10 @@
 
   <script>
     import { createNote } from '../../state/actions.js'
-    import { selectedFolder } from './selectors.js'
+    import { view_folder } from '../../state/selectors.js'
     import './index.scss'
 
-    this.subscribe(selectedFolder)
+    this.subscribe(view_folder)
 
     clickAdd () {
       this.dispatch(createNote())

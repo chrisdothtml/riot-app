@@ -7,7 +7,7 @@
       <li
         each="{ showingNotes }"
         role="button"
-        class="{ selected: id === selectedNote }"
+        class="{ selected: id === view.note }"
         data-id="{ id }"
         onclick="{ clickNote }"
       >
@@ -18,13 +18,13 @@
 
   <script>
     import { selectNote } from '../../state/actions.js'
-    import { notes, stateView } from './selectors.js'
+    import { notes, view } from '../../state/selectors.js'
     import { filterNotes } from '../../common/utils.js'
     import '../List-Actions/index.tag'
     import './index.scss'
 
     this.subscribe(notes)
-    this.subscribe(stateView)
+    this.subscribe(view)
 
     // filter notes on update
     this.on('update', () => {

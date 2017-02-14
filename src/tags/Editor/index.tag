@@ -11,12 +11,12 @@
           placeholder="Note title"
           value="{ note.title }"
           onkeyup="{ updateTitle }"
-          disabled="{ selectedFolder === 'Deleted' }"
+          disabled="{ view.folder === 'Deleted' }"
         />
 
         <Editor-Action
-          selected_folder="{ selectedFolder }"
-          selected_note="{ selectedNote }"
+          view_folder="{ view.folder }"
+          view_note="{ view.note }"
         />
       </div>
 
@@ -26,26 +26,26 @@
           class="note-body"
           placeholder="Note body"
           onkeyup="{ updateBody }"
-          disabled="{ selectedFolder === 'Deleted' }"
+          disabled="{ view.folder === 'Deleted' }"
         >{ note.body }</textarea>
       </div>
     </form>
   </div>
 
   <script>
-    import { stateView } from './selectors.js'
+    import { view } from '../../state/selectors.js'
     import { findNote } from '../../common/utils.js'
     import '../Editor-Action/index.tag'
     import './index.scss'
 
     this.note = {}
-    this.subscribe(stateView)
+    this.subscribe(view)
 
-    // update note when selected is updated
+    // update note when view is updated
     this.on('update', () => {
       this.note = findNote(
         this.store.getState(),
-        this.selectedNote
+        this.view.note
       )
     })
 
