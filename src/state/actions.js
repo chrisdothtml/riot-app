@@ -1,9 +1,14 @@
+import config from '../config.json'
+
 /*
  * Notes
  */
 export function createNote () {
+  const note = Object.assign({}, config['blank-note'])
+
   return {
-    type: 'create-note'
+    type: 'create-note',
+    note
   }
 }
 

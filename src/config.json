@@ -1,3 +1,9 @@
 {
+  "blank-note": {
+    "id": -1,
+    "title": "New note title",
+    "body": "",
+    "deleted": false
+  },
   "folders": ["Active", "Deleted"]
 }

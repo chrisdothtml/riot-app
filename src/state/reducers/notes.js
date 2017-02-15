@@ -6,14 +6,9 @@ import { getNoteIndex } from '../../common/utils.js'
  */
 function createNote (state) {
   let { notes } = state
-  const id = notes.length + 1
-  const note = {
-    userId: 1,
-    id,
-    title: 'New note title',
-    body: '',
-    deleted: false
-  }
+
+  // this would be better in a real app
+  note.id = notes.length + 1
 
   // add note
   notes = [note].concat(notes)
